@@ -1,0 +1,582 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		055458FD28DA025D00C67F62 /* OkeyBotApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055458FC28DA025D00C67F62 /* OkeyBotApp.swift */; };
+		055458FF28DA025D00C67F62 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055458FE28DA025D00C67F62 /* ContentView.swift */; };
+		0554590128DA025F00C67F62 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0554590028DA025F00C67F62 /* Assets.xcassets */; };
+		0554590428DA025F00C67F62 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0554590328DA025F00C67F62 /* Preview Assets.xcassets */; };
+		0554590E28DA026000C67F62 /* OkeyBotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0554590D28DA026000C67F62 /* OkeyBotTests.swift */; };
+		0554591828DA026000C67F62 /* OkeyBotUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0554591728DA026000C67F62 /* OkeyBotUITests.swift */; };
+		0554591A28DA026000C67F62 /* OkeyBotUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0554591928DA026000C67F62 /* OkeyBotUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		0554590A28DA026000C67F62 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 055458F128DA025D00C67F62 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 055458F828DA025D00C67F62;
+			remoteInfo = OkeyBot;
+		};
+		0554591428DA026000C67F62 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 055458F128DA025D00C67F62 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 055458F828DA025D00C67F62;
+			remoteInfo = OkeyBot;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		055458F928DA025D00C67F62 /* OkeyBot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OkeyBot.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		055458FC28DA025D00C67F62 /* OkeyBotApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OkeyBotApp.swift; sourceTree = "<group>"; };
+		055458FE28DA025D00C67F62 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		0554590028DA025F00C67F62 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		0554590328DA025F00C67F62 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		0554590928DA026000C67F62 /* OkeyBotTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OkeyBotTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0554590D28DA026000C67F62 /* OkeyBotTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OkeyBotTests.swift; sourceTree = "<group>"; };
+		0554591328DA026000C67F62 /* OkeyBotUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OkeyBotUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0554591728DA026000C67F62 /* OkeyBotUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OkeyBotUITests.swift; sourceTree = "<group>"; };
+		0554591928DA026000C67F62 /* OkeyBotUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OkeyBotUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		055458F628DA025D00C67F62 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0554590628DA026000C67F62 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0554591028DA026000C67F62 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		055458F028DA025D00C67F62 = {
+			isa = PBXGroup;
+			children = (
+				055458FB28DA025D00C67F62 /* OkeyBot */,
+				0554590C28DA026000C67F62 /* OkeyBotTests */,
+				0554591628DA026000C67F62 /* OkeyBotUITests */,
+				055458FA28DA025D00C67F62 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		055458FA28DA025D00C67F62 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				055458F928DA025D00C67F62 /* OkeyBot.app */,
+				0554590928DA026000C67F62 /* OkeyBotTests.xctest */,
+				0554591328DA026000C67F62 /* OkeyBotUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		055458FB28DA025D00C67F62 /* OkeyBot */ = {
+			isa = PBXGroup;
+			children = (
+				055458FC28DA025D00C67F62 /* OkeyBotApp.swift */,
+				055458FE28DA025D00C67F62 /* ContentView.swift */,
+				0554590028DA025F00C67F62 /* Assets.xcassets */,
+				0554590228DA025F00C67F62 /* Preview Content */,
+			);
+			path = OkeyBot;
+			sourceTree = "<group>";
+		};
+		0554590228DA025F00C67F62 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				0554590328DA025F00C67F62 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		0554590C28DA026000C67F62 /* OkeyBotTests */ = {
+			isa = PBXGroup;
+			children = (
+				0554590D28DA026000C67F62 /* OkeyBotTests.swift */,
+			);
+			path = OkeyBotTests;
+			sourceTree = "<group>";
+		};
+		0554591628DA026000C67F62 /* OkeyBotUITests */ = {
+			isa = PBXGroup;
+			children = (
+				0554591728DA026000C67F62 /* OkeyBotUITests.swift */,
+				0554591928DA026000C67F62 /* OkeyBotUITestsLaunchTests.swift */,
+			);
+			path = OkeyBotUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		055458F828DA025D00C67F62 /* OkeyBot */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0554591D28DA026000C67F62 /* Build configuration list for PBXNativeTarget "OkeyBot" */;
+			buildPhases = (
+				055458F528DA025D00C67F62 /* Sources */,
+				055458F628DA025D00C67F62 /* Frameworks */,
+				055458F728DA025D00C67F62 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = OkeyBot;
+			productName = OkeyBot;
+			productReference = 055458F928DA025D00C67F62 /* OkeyBot.app */;
+			productType = "com.apple.product-type.application";
+		};
+		0554590828DA026000C67F62 /* OkeyBotTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0554592028DA026000C67F62 /* Build configuration list for PBXNativeTarget "OkeyBotTests" */;
+			buildPhases = (
+				0554590528DA026000C67F62 /* Sources */,
+				0554590628DA026000C67F62 /* Frameworks */,
+				0554590728DA026000C67F62 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0554590B28DA026000C67F62 /* PBXTargetDependency */,
+			);
+			name = OkeyBotTests;
+			productName = OkeyBotTests;
+			productReference = 0554590928DA026000C67F62 /* OkeyBotTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		0554591228DA026000C67F62 /* OkeyBotUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0554592328DA026000C67F62 /* Build configuration list for PBXNativeTarget "OkeyBotUITests" */;
+			buildPhases = (
+				0554590F28DA026000C67F62 /* Sources */,
+				0554591028DA026000C67F62 /* Frameworks */,
+				0554591128DA026000C67F62 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0554591528DA026000C67F62 /* PBXTargetDependency */,
+			);
+			name = OkeyBotUITests;
+			productName = OkeyBotUITests;
+			productReference = 0554591328DA026000C67F62 /* OkeyBotUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		055458F128DA025D00C67F62 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1340;
+				LastUpgradeCheck = 1340;
+				TargetAttributes = {
+					055458F828DA025D00C67F62 = {
+						CreatedOnToolsVersion = 13.4.1;
+					};
+					0554590828DA026000C67F62 = {
+						CreatedOnToolsVersion = 13.4.1;
+						TestTargetID = 055458F828DA025D00C67F62;
+					};
+					0554591228DA026000C67F62 = {
+						CreatedOnToolsVersion = 13.4.1;
+						TestTargetID = 055458F828DA025D00C67F62;
+					};
+				};
+			};
+			buildConfigurationList = 055458F428DA025D00C67F62 /* Build configuration list for PBXProject "OkeyBot" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 055458F028DA025D00C67F62;
+			productRefGroup = 055458FA28DA025D00C67F62 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				055458F828DA025D00C67F62 /* OkeyBot */,
+				0554590828DA026000C67F62 /* OkeyBotTests */,
+				0554591228DA026000C67F62 /* OkeyBotUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		055458F728DA025D00C67F62 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0554590428DA025F00C67F62 /* Preview Assets.xcassets in Resources */,
+				0554590128DA025F00C67F62 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0554590728DA026000C67F62 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0554591128DA026000C67F62 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		055458F528DA025D00C67F62 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				055458FF28DA025D00C67F62 /* ContentView.swift in Sources */,
+				055458FD28DA025D00C67F62 /* OkeyBotApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0554590528DA026000C67F62 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0554590E28DA026000C67F62 /* OkeyBotTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0554590F28DA026000C67F62 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0554591A28DA026000C67F62 /* OkeyBotUITestsLaunchTests.swift in Sources */,
+				0554591828DA026000C67F62 /* OkeyBotUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		0554590B28DA026000C67F62 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 055458F828DA025D00C67F62 /* OkeyBot */;
+			targetProxy = 0554590A28DA026000C67F62 /* PBXContainerItemProxy */;
+		};
+		0554591528DA026000C67F62 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 055458F828DA025D00C67F62 /* OkeyBot */;
+			targetProxy = 0554591428DA026000C67F62 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		0554591B28DA026000C67F62 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		0554591C28DA026000C67F62 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		0554591E28DA026000C67F62 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"OkeyBot/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.HOP.OkeyBot;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		0554591F28DA026000C67F62 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"OkeyBot/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.HOP.OkeyBot;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		0554592128DA026000C67F62 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.HOP.OkeyBotTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OkeyBot.app/OkeyBot";
+			};
+			name = Debug;
+		};
+		0554592228DA026000C67F62 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.HOP.OkeyBotTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OkeyBot.app/OkeyBot";
+			};
+			name = Release;
+		};
+		0554592428DA026000C67F62 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.HOP.OkeyBotUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = OkeyBot;
+			};
+			name = Debug;
+		};
+		0554592528DA026000C67F62 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.HOP.OkeyBotUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = OkeyBot;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		055458F428DA025D00C67F62 /* Build configuration list for PBXProject "OkeyBot" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0554591B28DA026000C67F62 /* Debug */,
+				0554591C28DA026000C67F62 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0554591D28DA026000C67F62 /* Build configuration list for PBXNativeTarget "OkeyBot" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0554591E28DA026000C67F62 /* Debug */,
+				0554591F28DA026000C67F62 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0554592028DA026000C67F62 /* Build configuration list for PBXNativeTarget "OkeyBotTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0554592128DA026000C67F62 /* Debug */,
+				0554592228DA026000C67F62 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0554592328DA026000C67F62 /* Build configuration list for PBXNativeTarget "OkeyBotUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0554592428DA026000C67F62 /* Debug */,
+				0554592528DA026000C67F62 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 055458F128DA025D00C67F62 /* Project object */;
+}
