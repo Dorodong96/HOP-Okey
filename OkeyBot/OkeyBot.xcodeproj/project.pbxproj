@@ -14,6 +14,7 @@
 		0554590E28DA026000C67F62 /* OkeyBotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0554590D28DA026000C67F62 /* OkeyBotTests.swift */; };
 		0554591828DA026000C67F62 /* OkeyBotUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0554591728DA026000C67F62 /* OkeyBotUITests.swift */; };
 		0554591A28DA026000C67F62 /* OkeyBotUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0554591928DA026000C67F62 /* OkeyBotUITestsLaunchTests.swift */; };
+		0554592728DAA4D200C67F62 /* BotResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0554592628DAA4D200C67F62 /* BotResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		0554591328DA026000C67F62 /* OkeyBotUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OkeyBotUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0554591728DA026000C67F62 /* OkeyBotUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OkeyBotUITests.swift; sourceTree = "<group>"; };
 		0554591928DA026000C67F62 /* OkeyBotUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OkeyBotUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		0554592628DAA4D200C67F62 /* BotResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BotResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +98,7 @@
 			children = (
 				055458FC28DA025D00C67F62 /* OkeyBotApp.swift */,
 				055458FE28DA025D00C67F62 /* ContentView.swift */,
+				0554592628DAA4D200C67F62 /* BotResponse.swift */,
 				0554590028DA025F00C67F62 /* Assets.xcassets */,
 				0554590228DA025F00C67F62 /* Preview Content */,
 			);
@@ -259,6 +262,7 @@
 			files = (
 				055458FF28DA025D00C67F62 /* ContentView.swift in Sources */,
 				055458FD28DA025D00C67F62 /* OkeyBotApp.swift in Sources */,
+				0554592728DAA4D200C67F62 /* BotResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
