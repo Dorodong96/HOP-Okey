@@ -20,7 +20,7 @@ struct LonleyBot: View {
                         .font(.largeTitle)
                         .bold()
                     Image(systemName: "bubble.left.fill")
-                        .font(.system(size: 26))
+                        .font(.system(size: 32))
                         .foregroundColor(Color.red)
                 }
                 .padding([.top, .bottom], -30)
@@ -59,7 +59,7 @@ struct LonleyBot: View {
                 .background(Color.gray.opacity(0.10 ))
                 
                 HStack {
-                    TextField("입력해주세요.", text: $messageText)
+                    TextField("옥희에게 말해주세요.", text: $messageText)
                         .padding()
                         .background(Color.gray.opacity(0.1))
                         .cornerRadius(10)
@@ -72,7 +72,7 @@ struct LonleyBot: View {
                         Image(systemName: "paperplane.fill")
                             .foregroundColor(Color.red)
                     }
-                    .font(.system(size: 26))
+                    .font(.system(size: 32))
                     .padding(.horizontal, 10)
                 }
                 .padding()
