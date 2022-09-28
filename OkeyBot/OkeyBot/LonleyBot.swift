@@ -77,6 +77,7 @@ struct LonleyBot: View {
                 }
                 .padding()
             }
+            .navigationTitle("")
             .navigationBarHidden(true)
         }
     }
