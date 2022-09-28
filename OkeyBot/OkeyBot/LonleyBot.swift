@@ -26,10 +26,8 @@ struct LonleyBot: View {
                         .foregroundColor(Color.red)
                 }
                 .padding([.top, .bottom], -30)
-                ScrollViewReader{
-                    scrollView in
+                
                 ScrollView {
-                    
                     ForEach(messageViewModel.messages, id: \.self) { message in
                         if message.contains("[USER]") {
                             let newMessage = message.replacingOccurrences(of: "[USER]", with: "")
@@ -54,31 +52,26 @@ struct LonleyBot: View {
                                     .padding(.bottom, 10 )
                                 Spacer()
                             }
-//                                if(messageViewModel.index < 6 && message.contains(survey.question[messageViewModel.index]))
-//                                {
-//                                    ButtonView(messageViewModel: messageViewModel)
-//
-//                                }
                         }
                     }
                     .rotationEffect(Angle(degrees: 180))
                 }
                 .rotationEffect(Angle(degrees: 180))
-                .background(Color.gray.opacity(0.10 ))
-                }
+                .background(Color.gray.opacity(0 ))
+                
                 if(messageViewModel.index < 6 && messageViewModel.messages[messageViewModel.messages.count - 1].contains(survey.question[messageViewModel.index]))
                 {
                     
-                    ButtonView(messageViewModel: messageViewModel)
+                    ButtonView(messageViewModel: messageViewModel).padding()
                     
                 }
                 if(!messageViewModel.isPossiblebutton){KeyBoardView(messageViewModel: messageViewModel)}
-            }
+            }.background(Color.gray.opacity(0.1 ))
             .navigationTitle("")
             .navigationBarHidden(true)
         }
     }
-   
+    
 }
 
 struct LonleyBot_Previews: PreviewProvider {

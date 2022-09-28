@@ -16,9 +16,7 @@ struct ButtonView: View {
             HStack{
                 Button(action: {
                     messageViewModel.increaseIndex()
-                    messageViewModel.messages.append("[USER]예")
-                    messageViewModel.messages.append(survey.question[messageViewModel.index])
-                    
+                    sendMessage(message: "[USER]예", index: messageViewModel.index)
                 }) {
                     HStack {
                         Text("예")
@@ -32,10 +30,7 @@ struct ButtonView: View {
                 }
                 Button(action: {
                     messageViewModel.increaseIndex()
-                   // messageViewModel.messages.append("[USER]아니요 ")
-                    sendMessage(message: "[USER]아니요 ")
-                    messageViewModel.messages.append(survey.question[messageViewModel.index])
-                    
+                    sendMessage(message: "[USER]아니요", index: messageViewModel.index)
                 }) {
                     HStack {
                         Text("아니요")
@@ -57,17 +52,17 @@ struct ButtonView: View {
             
         }
     }
-    func sendMessage(message: String) {
+    func sendMessage(message: String, index: Int) {
         withAnimation {
             messageViewModel.messages.append("[USER]" + message)
             messageViewModel.messageText = ""
         }
         
-//        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-//            withAnimation {
-//                messageViewModel.messages.append(getBotResponse(message: message))
-//            }
-//        }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            withAnimation {
+                messageViewModel.messages.append(survey.question[index])
+            }
+        }
     }
 
 }
