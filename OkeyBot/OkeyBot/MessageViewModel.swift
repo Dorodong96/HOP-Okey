@@ -12,6 +12,8 @@ class MessageViewModel: ObservableObject{
     @Published var index: Int = 0
     @Published var messages: [String] = ["옥희봇에 오신걸 환영합니다.", "간단한 질문을 몇 개 드려도 될까요?",]
     @Published var isPossiblebutton: Bool = true
+    @Published var test: Bool = true
+    @Published var messageText: String = ""
     func increaseIndex(){
         index += 1
         print("Debug index",index)

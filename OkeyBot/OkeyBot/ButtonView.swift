@@ -12,9 +12,11 @@ struct ButtonView: View {
     let survey: Survey = Survey()
     var body: some View {
         VStack{
+            if(messageViewModel.test){
             HStack{
                 Button(action: {
                     messageViewModel.increaseIndex()
+                    messageViewModel.messages.append("[USER]예")
                     messageViewModel.messages.append(survey.question[messageViewModel.index])
                     
                 }) {
@@ -30,9 +32,10 @@ struct ButtonView: View {
                 }
                 Button(action: {
                     messageViewModel.increaseIndex()
-                    if(messageViewModel.index < 5 ){
+                   // messageViewModel.messages.append("[USER]아니요 ")
+                    sendMessage(message: "[USER]아니요 ")
                     messageViewModel.messages.append(survey.question[messageViewModel.index])
-                    }
+                    
                 }) {
                     HStack {
                         Text("아니요")
@@ -46,5 +49,25 @@ struct ButtonView: View {
                 }
             }
         }
+        }.onAppear(){
+            messageViewModel.test = false
+           // withAnimation{
+                messageViewModel.test.toggle()
+            //}
+            
+        }
     }
+    func sendMessage(message: String) {
+        withAnimation {
+            messageViewModel.messages.append("[USER]" + message)
+            messageViewModel.messageText = ""
+        }
+        
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+//            withAnimation {
+//                messageViewModel.messages.append(getBotResponse(message: message))
+//            }
+//        }
+    }
+
 }

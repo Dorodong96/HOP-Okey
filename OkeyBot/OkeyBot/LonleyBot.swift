@@ -26,9 +26,10 @@ struct LonleyBot: View {
                         .foregroundColor(Color.red)
                 }
                 .padding([.top, .bottom], -30)
-                
-                
+                ScrollViewReader{
+                    scrollView in
                 ScrollView {
+                    
                     ForEach(messageViewModel.messages, id: \.self) { message in
                         if message.contains("[USER]") {
                             let newMessage = message.replacingOccurrences(of: "[USER]", with: "")
@@ -53,54 +54,31 @@ struct LonleyBot: View {
                                     .padding(.bottom, 10 )
                                 Spacer()
                             }
-                            if(messageViewModel.index < 6 && message.contains(survey.question[messageViewModel.index]))
-                            {
-                                ButtonView(messageViewModel: messageViewModel)
-                                
-                            }
+//                                if(messageViewModel.index < 6 && message.contains(survey.question[messageViewModel.index]))
+//                                {
+//                                    ButtonView(messageViewModel: messageViewModel)
+//
+//                                }
                         }
                     }
-                    .rotationEffect(.degrees(180))
+                    .rotationEffect(Angle(degrees: 180))
                 }
-                .rotationEffect(.degrees(180))
+                .rotationEffect(Angle(degrees: 180))
                 .background(Color.gray.opacity(0.10 ))
-                HStack {
-                    TextField("옥희에게 말해주세요.", text: $messageText)
-                        .padding()
-                        .background(Color.gray.opacity(0.1))
-                        .cornerRadius(10)
-                        .onSubmit {
-                            sendMessage(message: messageText)
-                        }
-                    Button {
-                        sendMessage(message: messageText)
-                       // messageViewModel.messages.append(survey.question[messageViewModel.index])
-                      //  messageViewModel.increaseIndex()
-                    } label: {
-                        messageViewModel.isPossiblebutton ? Image(systemName: "paperplane.fill").foregroundColor(Color.gray) : Image(systemName: "paperplane.fill").foregroundColor(Color.red)
-                    }
-                    .disabled(messageViewModel.isPossiblebutton)
-                    .font(.system(size: 32))
-                    .padding(.horizontal, 10)
                 }
-                .padding()
+                if(messageViewModel.index < 6 && messageViewModel.messages[messageViewModel.messages.count - 1].contains(survey.question[messageViewModel.index]))
+                {
+                    
+                    ButtonView(messageViewModel: messageViewModel)
+                    
+                }
+                if(!messageViewModel.isPossiblebutton){KeyBoardView(messageViewModel: messageViewModel)}
             }
             .navigationTitle("")
             .navigationBarHidden(true)
         }
     }
-    func sendMessage(message: String) {
-        withAnimation {
-            messageViewModel.messages.append("[USER]" + message)
-            self.messageText = ""
-        }
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-            withAnimation {
-                messageViewModel.messages.append(getBotResponse(message: message))
-            }
-        }
-    }
+   
 }
 
 struct LonleyBot_Previews: PreviewProvider {
