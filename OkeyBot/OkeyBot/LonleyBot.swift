@@ -10,7 +10,9 @@ import SwiftUI
 
 struct LonleyBot: View {
     @State private var messageText = ""
-    @State private var messages: [String] = ["옥희봇에 오신걸 환영합니다."]
+    @StateObject var messageViewModel: MessageViewModel = MessageViewModel()
+    
+    let survey: Survey = Survey()
     
     var body: some View {
         NavigationView {
@@ -27,7 +29,7 @@ struct LonleyBot: View {
                 
                 
                 ScrollView {
-                    ForEach(messages, id: \.self) { message in
+                    ForEach(messageViewModel.messages, id: \.self) { message in
                         if message.contains("[USER]") {
                             let newMessage = message.replacingOccurrences(of: "[USER]", with: "")
                             
@@ -51,13 +53,17 @@ struct LonleyBot: View {
                                     .padding(.bottom, 10 )
                                 Spacer()
                             }
+                            if(messageViewModel.index < 6 && message.contains(survey.question[messageViewModel.index]))
+                            {
+                                ButtonView(messageViewModel: messageViewModel)
+                                
+                            }
                         }
                     }
                     .rotationEffect(.degrees(180))
                 }
                 .rotationEffect(.degrees(180))
                 .background(Color.gray.opacity(0.10 ))
-                
                 HStack {
                     TextField("옥희에게 말해주세요.", text: $messageText)
                         .padding()
@@ -67,11 +73,13 @@ struct LonleyBot: View {
                             sendMessage(message: messageText)
                         }
                     Button {
-                         sendMessage(message: messageText)
+                        sendMessage(message: messageText)
+                       // messageViewModel.messages.append(survey.question[messageViewModel.index])
+                      //  messageViewModel.increaseIndex()
                     } label: {
-                        Image(systemName: "paperplane.fill")
-                            .foregroundColor(Color.red)
+                        messageViewModel.isPossiblebutton ? Image(systemName: "paperplane.fill").foregroundColor(Color.gray) : Image(systemName: "paperplane.fill").foregroundColor(Color.red)
                     }
+                    .disabled(messageViewModel.isPossiblebutton)
                     .font(.system(size: 32))
                     .padding(.horizontal, 10)
                 }
@@ -83,13 +91,13 @@ struct LonleyBot: View {
     }
     func sendMessage(message: String) {
         withAnimation {
-            messages.append("[USER]" + message)
+            messageViewModel.messages.append("[USER]" + message)
             self.messageText = ""
         }
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
             withAnimation {
-                messages.append(getBotResponse(message: message))
+                messageViewModel.messages.append(getBotResponse(message: message))
             }
         }
     }
