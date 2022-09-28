@@ -8,59 +8,78 @@
 import SwiftUI
 
 struct HomeView: View{
+    @State private var isPresented = false
+    
     var body: some View {
         
         NavigationView {
             VStack {
                 HStack {
-                    Text("그대를 위해")
+                    Image(systemName: "heart.fill")
+                        .font(.system(size: 26))
+                        .foregroundColor(Color.red.opacity(0.8))
+                    Text("옥희봇")
                         .font(.system(size: 30))
                         .bold()
-                    Image(systemName: "face.smiling")
-                        .font(.system(size: 26))
-                        .foregroundColor(Color.red)
+                    
                 }
-                .padding()
+                .padding(15)
                 
-                NavigationLink(destination: LonleyBot()) {
+                Button {
+                    self.isPresented.toggle()
+                } label: {
                     Text("외로운 그대를 위해")
-                        .font(.system(size: 38))
+                        .font(.system(size: 33))
                         .foregroundColor(Color.black)
                         .fontWeight(.semibold)
                         .frame(width: 350, height: 70)
                         .background(
                             RoundedRectangle(cornerRadius: 20)
-                                .stroke(Color.red, lineWidth: 5)
-                                .shadow(color: .black, radius: 2, x: 2, y: 2))
+                                .stroke(Color.red.opacity(0.8), lineWidth: 5)
+                                .shadow(color: .gray, radius: 2, x: 2, y: 2))
                 }
-                .padding(20)
-                NavigationLink(destination: LonleyBot()) {
-                    Text("슬픈 그대를 위해")
-                        .font(.system(size: 38))
-                        .foregroundColor(Color.black)
-                        .fontWeight(.semibold)
-                        .frame(width: 350, height: 70)
-                        .background(
-                            RoundedRectangle(cornerRadius: 20)
-                                .stroke(Color.red, lineWidth: 5)
-                                .shadow(color: .black, radius: 2, x: 2, y: 2))
-                }
-                .padding(20)
+                .fullScreenCover(isPresented: $isPresented, content: LonleyBot.init)
+                .font(.system(size: 20))
+                .padding(30)
                 
-                NavigationLink(destination: LonleyBot()) {
-                    Text("사랑이 고달 플 때")
-                        .font(.system(size: 38))
+                Button {
+                    self.isPresented.toggle()
+                } label: {
+                    Text("슬픈 그대를 위해")
+                        .font(.system(size: 33))
                         .foregroundColor(Color.black)
                         .fontWeight(.semibold)
                         .frame(width: 350, height: 70)
                         .background(
                             RoundedRectangle(cornerRadius: 20)
-                                .stroke(Color.red, lineWidth: 5)
-                                .shadow(color: .black, radius: 2, x: 2, y: 2))
+                                .stroke(Color.red.opacity(0.8), lineWidth: 5)
+                                .shadow(color: .gray, radius: 2, x: 2, y: 2))
                 }
-                .padding(20)
+                .fullScreenCover(isPresented: $isPresented, content: LonleyBot.init)
+                
+                .padding(30)
+                
+                Button {
+                    self.isPresented.toggle()
+                } label: {
+                    Text("행복한 그대를 위해")
+                        .font(.system(size: 33))
+                        .foregroundColor(Color.black)
+                        .fontWeight(.semibold)
+                        .frame(width: 350, height: 70)
+                        .background(
+                            RoundedRectangle(cornerRadius: 20)
+                                .stroke(Color.red.opacity(0.8), lineWidth: 5)
+                                .shadow(color: .gray, radius: 2, x: 2, y: 2))
+                }
+                .fullScreenCover(isPresented: $isPresented, content: LonleyBot.init)
+                
+                .padding(30)
                 Spacer()
-                .navigationBarHidden(true)
+                    .navigationBarHidden(true)
+                    .ignoresSafeArea(.all, edges: .bottom)
+                
+                
             }
             
         }

@@ -13,21 +13,13 @@ struct LonleyBot: View {
     @StateObject var messageViewModel: MessageViewModel = MessageViewModel()
     
     let survey: Survey = Survey()
+
+    @State private var messages: [String] = ["옥희봇에 오신걸 환영합니다."]
+    @Environment(\.presentationMode) var presentationMode
     
     var body: some View {
         NavigationView {
             VStack {
-                HStack {
-                    Text("옥희")
-                        .font(.largeTitle)
-                        .bold()
-                    Image(systemName: "bubble.left.fill")
-                        .font(.system(size: 32))
-                        .foregroundColor(Color.red)
-                }
-                .padding([.top, .bottom], -30)
-                
-                
                 ScrollView {
                     ForEach(messageViewModel.messages, id: \.self) { message in
                         if message.contains("[USER]") {
@@ -35,19 +27,33 @@ struct LonleyBot: View {
                             
                             HStack {
                                 Spacer()
+                                
                                 Text(newMessage)
-                                    .padding()
+                                    .padding(10)
+                                    .font(.system(size: 22))
                                     .foregroundColor(.white)
-                                    .background(.red.opacity(0.8))
+                                    .background(.blue.opacity(0.8))
                                     .cornerRadius(10)
                                     .padding(.horizontal, 16)
                                     .padding(.bottom, 10 )
+                                
                             }
                         } else {
                             HStack {
+                                Image("women")
+                                    .resizable()
+                                    .scaledToFill()
+                                    .frame(width: 30, height: 30)
+                                    .clipShape(Circle())
+                                    .overlay {
+                                        Circle().stroke(.red, lineWidth: 3)
+                                    }
+                                    .padding(.leading, 10)
+                                    .padding(.trailing, -10)
                                 Text(message)
-                                    .padding()
-                                    .background(.gray.opacity(0.15))
+                                    .padding(10)
+                                    .font(.system(size: 22))
+                                    .background(.gray.opacity(0.4))
                                     .cornerRadius(10)
                                     .padding(.horizontal, 16)
                                     .padding(.bottom, 10 )
@@ -63,11 +69,13 @@ struct LonleyBot: View {
                     .rotationEffect(.degrees(180))
                 }
                 .rotationEffect(.degrees(180))
-                .background(Color.gray.opacity(0.10 ))
+                .background(Color.gray.opacity(0.10))
+                
                 HStack {
-                    TextField("옥희에게 말해주세요.", text: $messageText)
-                        .padding()
-                        .background(Color.gray.opacity(0.1))
+                    TextField("옥희에게 말을 걸어주세요.", text: $messageText)
+                        .font(.system(size: 22))
+                        .padding(10)
+                        .background(Color.gray.opacity(0.15))
                         .cornerRadius(10)
                         .onSubmit {
                             sendMessage(message: messageText)
@@ -77,16 +85,33 @@ struct LonleyBot: View {
                        // messageViewModel.messages.append(survey.question[messageViewModel.index])
                       //  messageViewModel.increaseIndex()
                     } label: {
-                        messageViewModel.isPossiblebutton ? Image(systemName: "paperplane.fill").foregroundColor(Color.gray) : Image(systemName: "paperplane.fill").foregroundColor(Color.red)
+
+                        messageViewModel.isPossiblebutton ? Image(systemName: "paperplane.fill").foregroundColor(Color.gray) : Image(systemName: "paperplane.fill").foregroundColor(Color.red.opacity(0.7))
+
                     }
                     .disabled(messageViewModel.isPossiblebutton)
                     .font(.system(size: 32))
                     .padding(.horizontal, 10)
+                    
                 }
-                .padding()
+                .padding(10)
             }
-            .navigationTitle("")
-            .navigationBarHidden(true)
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            
+            .navigationTitle("옥희봇")
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                Button {
+                    presentationMode.wrappedValue.dismiss()
+                } label: {
+                    Text("나가기")
+                        .font(.system(size: 20))
+                        .fontWeight(.semibold)
+                        .foregroundColor(.black)
+                }
+                
+                
+            }
         }
     }
     func sendMessage(message: String) {
