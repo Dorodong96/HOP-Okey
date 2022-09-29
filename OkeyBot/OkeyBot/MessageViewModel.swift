@@ -14,6 +14,8 @@ class MessageViewModel: ObservableObject{
     @Published var isPossiblebutton: Bool = true
     @Published var test: Bool = true
     @Published var messageText: String = ""
+    @Published var isPossibleShowButton: Bool = true
+    
     func increaseIndex(){
         index += 1
         print("Debug index",index)
