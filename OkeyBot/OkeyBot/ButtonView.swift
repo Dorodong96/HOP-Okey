@@ -25,7 +25,7 @@ struct ButtonView: View {
                     }
                     .padding()
                     .foregroundColor(.white)
-                    .background(Color.red)
+                    .background(Color.blue)
                     .cornerRadius(40)
                 }
                 Button(action: {
@@ -39,7 +39,7 @@ struct ButtonView: View {
                     }
                     .padding()
                     .foregroundColor(.white)
-                    .background(Color.red)
+                    .background(Color.blue)
                     .cornerRadius(40)
                 }
             }
