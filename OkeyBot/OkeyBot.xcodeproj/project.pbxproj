@@ -16,7 +16,6 @@
 		0554591A28DA026000C67F62 /* OkeyBotUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0554591928DA026000C67F62 /* OkeyBotUITestsLaunchTests.swift */; };
 		0554592728DAA4D200C67F62 /* BotResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0554592628DAA4D200C67F62 /* BotResponse.swift */; };
 		0554593628E2B33F00C67F62 /* LonleyBot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0554593528E2B33F00C67F62 /* LonleyBot.swift */; };
-		0554593828E35BDF00C67F62 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0554593728E35BDF00C67F62 /* HomeView.swift */; };
 		0554593A28E35C0B00C67F62 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0554593928E35C0B00C67F62 /* ProfileView.swift */; };
 		0554593D28E3646900C67F62 /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = 0554593C28E3646900C67F62 /* SwiftUICharts */; };
 		9A44BF2B28E47AB8003E3F7E /* Survey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A44BF2A28E47AB8003E3F7E /* Survey.swift */; };
@@ -55,7 +54,6 @@
 		0554591928DA026000C67F62 /* OkeyBotUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OkeyBotUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		0554592628DAA4D200C67F62 /* BotResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BotResponse.swift; sourceTree = "<group>"; };
 		0554593528E2B33F00C67F62 /* LonleyBot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LonleyBot.swift; sourceTree = "<group>"; };
-		0554593728E35BDF00C67F62 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		0554593928E35C0B00C67F62 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		9A44BF2A28E47AB8003E3F7E /* Survey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Survey.swift; sourceTree = "<group>"; };
 		9A44BF2C28E47CDD003E3F7E /* ButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
@@ -114,7 +112,6 @@
 			children = (
 				055458FC28DA025D00C67F62 /* OkeyBotApp.swift */,
 				055458FE28DA025D00C67F62 /* ContentView.swift */,
-				0554593728E35BDF00C67F62 /* HomeView.swift */,
 				0554593528E2B33F00C67F62 /* LonleyBot.swift */,
 				0554593928E35C0B00C67F62 /* ProfileView.swift */,
 				0554592628DAA4D200C67F62 /* BotResponse.swift */,
@@ -296,7 +293,6 @@
 				9A44BF2D28E47CDD003E3F7E /* ButtonView.swift in Sources */,
 				9A44BF2B28E47AB8003E3F7E /* Survey.swift in Sources */,
 				0554593628E2B33F00C67F62 /* LonleyBot.swift in Sources */,
-				0554593828E35BDF00C67F62 /* HomeView.swift in Sources */,
 				0554593A28E35C0B00C67F62 /* ProfileView.swift in Sources */,
 				0554592728DAA4D200C67F62 /* BotResponse.swift in Sources */,
 			);
