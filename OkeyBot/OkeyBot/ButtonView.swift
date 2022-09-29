@@ -21,12 +21,13 @@ struct ButtonView: View {
                 }) {
                     HStack {
                         Text("예")
-                        .foregroundColor(.green)
+                            .fontWeight(.semibold)
+                            .foregroundColor(Color("LGreen"))
                             .font(.title)
                     }
                     .padding()
                     .background(
-                        RoundedRectangle(cornerRadius: 20).stroke(Color.green, lineWidth: 2.5)
+                        RoundedRectangle(cornerRadius: 20).stroke(Color("LGreen"), lineWidth: 3.5)
                     )
                 }
                 Button(action: {
@@ -36,12 +37,13 @@ struct ButtonView: View {
                 }) {
                     HStack {
                         Text("아니요")
-                            .foregroundColor(.green)
+                            .fontWeight(.semibold)
+                            .foregroundColor(Color("LGreen"))
                                 .font(.title)
                     }
                     .padding()
                     .background(
-                        RoundedRectangle(cornerRadius: 20).stroke(Color.green, lineWidth: 2.5)
+                        RoundedRectangle(cornerRadius: 20).stroke(Color("LGreen"), lineWidth: 3.5)
                     )
                 }
             }

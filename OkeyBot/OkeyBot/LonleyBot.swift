@@ -9,18 +9,18 @@ import Foundation
 import SwiftUI
 
 struct LonleyBot: View {
+    @Environment(\.presentationMode) var presentationMode
     @State private var messageText = ""
+    @State private var isPresented = false
+    @State private var messages: [String] = ["옥희봇에 오신걸 환영합니다."]
     @StateObject var messageViewModel: MessageViewModel = MessageViewModel()
     
     let survey: Survey = Survey()
-
-    @State private var messages: [String] = ["옥희봇에 오신걸 환영합니다."]
-    @Environment(\.presentationMode) var presentationMode
     
     var body: some View {
         NavigationView {
             VStack {
-
+                
                 ScrollView(showsIndicators: false) {
                     ForEach(messageViewModel.messages, id: \.self) { message in
                         if message.contains("[USER]") {
@@ -33,7 +33,7 @@ struct LonleyBot: View {
                                     .padding(10)
                                     .font(.system(size: 22))
                                     .foregroundColor(.white)
-                                    .background(.green.opacity(0.8))
+                                    .background(Color("MGreen"))
                                     .cornerRadius(10)
                                     .padding(.horizontal, 16)
                                     .padding(.bottom, 10 )
@@ -45,7 +45,7 @@ struct LonleyBot: View {
                                     .padding(10)
                                     .font(.system(size: 22))
                                     .foregroundColor(.black.opacity(0.8))
-                                    .background(.gray.opacity(0.1))
+                                    .background(Color(UIColor.systemGray5))
                                     .cornerRadius(10)
                                     .padding(.horizontal, 16)
                                     .padding(.bottom, 10 )
@@ -55,9 +55,8 @@ struct LonleyBot: View {
                     }
                     .rotationEffect(Angle(degrees: 180))
                 }
-
+                
                 .rotationEffect(Angle(degrees: 180))
-               // .background(Color.white.opacity(0 ))
                 
                 if(messageViewModel.index < 6 && messageViewModel.messages[messageViewModel.messages.count - 1].contains(survey.question[messageViewModel.index]) && messageViewModel.isPossibleShowButton)
                 {
@@ -67,21 +66,19 @@ struct LonleyBot: View {
                 if(!messageViewModel.isPossiblebutton){
                     KeyBoardView(messageViewModel: messageViewModel).padding()
                 }
-            }.background(Color.gray.opacity(0.1))
-            .navigationTitle("옥희봇")
-            .navigationBarTitleDisplayMode(.inline)
-            .navigationBarBackButtonHidden(true)
-//            .toolbar{
-//                ToolbarItem(placement: .cancellationAction) {
-//
-//                Button(action: {presentationMode.wrappedValue.dismiss()}){
-//                    Image(systemName: "arrow.left")
-//                        .font(.system(size: 20))
-//                        .foregroundColor(.blue)
-//                }
-//
-//                }
-//            }
+            }.background(Color("LGray"))
+                .navigationTitle("옥희봇")
+                .navigationBarTitleDisplayMode(.inline)
+                .navigationBarBackButtonHidden(true)
+                .toolbar{
+                    ToolbarItem(placement: .navigationBarTrailing) {
+                        Button(action: { self.isPresented.toggle()}){
+                            Image(systemName: "person.circle")
+                                .font(.system(size: 25))
+                                .foregroundColor(Color("LGreen"))
+                        }.fullScreenCover(isPresented: $isPresented, content: ProfileView.init)
+                    }
+                }
         }
     }
     

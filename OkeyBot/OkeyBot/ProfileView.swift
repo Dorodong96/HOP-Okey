@@ -9,29 +9,20 @@ import SwiftUI
 import SwiftUICharts
 
 struct ProfileView: View {
+    @Environment(\.presentationMode) var presentationMode
     let chartStyle = ChartStyle(backgroundColor: Color.black, accentColor: Colors.OrangeStart, secondGradientColor: Colors.OrangeEnd, textColor: Color.white, legendTextColor: Color.white, dropShadowColor: Color.black )
     
     
     var body: some View {
         NavigationView {
             VStack {
-                HStack {
-                    Text("프로필")
-                        .font(.system(size: 30))
-                        .bold()
-                    Image(systemName: "person.crop.circle.fill")
-                        .font(.system(size: 26))
-                        .foregroundColor(Color.red)
-                }
-                .padding(15)
-                
                 Image("어르신")
                     .resizable()
                     .frame(width: 142, height: 142)
                     .scaledToFill()
                     .clipShape(Circle())
                     .overlay {
-                        Circle().stroke(.red, lineWidth: 5)
+                        Circle().stroke(Color("LGreen"), lineWidth: 5)
                     }
                 
                 
@@ -51,19 +42,24 @@ struct ProfileView: View {
                     BarChartView(data: ChartData(points: [80,60,4,5,50,10,40]), title: "우울 수치", style: chartStyle, form: ChartForm.large)
                     
                         .padding()
-                    Text("월   화   수   목   금   토   일")
-                        .font(.system(size: 32))
-                        .foregroundColor(Color.black)
-                        .padding(16)
-                        .background(.red.opacity(0.3))
-                        .cornerRadius(15)
+                    
                     
                     Spacer()
                 }
                 
                 
             }
-            .navigationBarHidden(true)
+            .navigationTitle("프로필")
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar{
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Button(action: { presentationMode.wrappedValue.dismiss()}){
+                        Image(systemName: "chevron.left")
+                            .font(.system(size: 25))
+                            .foregroundColor(Color("LGreen"))
+                    }
+                }
+            }
         }
     }
 }
