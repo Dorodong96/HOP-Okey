@@ -13,6 +13,9 @@ struct LonleyBot: View {
     @StateObject var messageViewModel: MessageViewModel = MessageViewModel()
     
     let survey: Survey = Survey()
+
+    @State private var messages: [String] = ["옥희봇에 오신걸 환영합니다."]
+    @Environment(\.presentationMode) var presentationMode
     
     var body: some View {
         NavigationView {
@@ -27,6 +30,7 @@ struct LonleyBot: View {
                 }
                 .padding([.top, .bottom], -30)
                 
+
                 ScrollView {
                     ForEach(messageViewModel.messages, id: \.self) { message in
                         if message.contains("[USER]") {
@@ -34,19 +38,33 @@ struct LonleyBot: View {
                             
                             HStack {
                                 Spacer()
+                                
                                 Text(newMessage)
-                                    .padding()
+                                    .padding(10)
+                                    .font(.system(size: 22))
                                     .foregroundColor(.white)
-                                    .background(.red.opacity(0.8))
+                                    .background(.blue.opacity(0.8))
                                     .cornerRadius(10)
                                     .padding(.horizontal, 16)
                                     .padding(.bottom, 10 )
+                                
                             }
                         } else {
                             HStack {
+                                Image("women")
+                                    .resizable()
+                                    .scaledToFill()
+                                    .frame(width: 30, height: 30)
+                                    .clipShape(Circle())
+                                    .overlay {
+                                        Circle().stroke(.red, lineWidth: 3)
+                                    }
+                                    .padding(.leading, 10)
+                                    .padding(.trailing, -10)
                                 Text(message)
-                                    .padding()
-                                    .background(.gray.opacity(0.15))
+                                    .padding(10)
+                                    .font(.system(size: 22))
+                                    .background(.gray.opacity(0.4))
                                     .cornerRadius(10)
                                     .padding(.horizontal, 16)
                                     .padding(.bottom, 10 )
@@ -56,6 +74,7 @@ struct LonleyBot: View {
                     }
                     .rotationEffect(Angle(degrees: 180))
                 }
+
                 .rotationEffect(Angle(degrees: 180))
                 .background(Color.gray.opacity(0 ))
                 
