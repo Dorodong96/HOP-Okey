@@ -14,16 +14,21 @@ struct HomeView: View{
         
         NavigationView {
             VStack {
-                HStack {
-                    Image(systemName: "heart.fill")
-                        .font(.system(size: 26))
-                        .foregroundColor(Color.red.opacity(0.8))
-                    Text("옥희봇")
-                        .font(.system(size: 30))
-                        .bold()
-                    
-                }
-                .padding(15)
+//                HStack {
+//                    Image(systemName: "heart.fill")
+//                        .font(.system(size: 26))
+//                        .foregroundColor(Color.red.opacity(0.8))
+//                    Text("옥희봇")
+//                        .font(.system(size: 30))
+//                        .bold()
+//
+//                    Button(action: {}){
+//                        Image(systemName: "person.circle")
+//                        .font(.system(size: 40))
+//                    } .padding(.leading, 20)
+//
+//                }
+//                .padding(15)
                 
                 Button {
                     self.isPresented.toggle()
@@ -73,12 +78,17 @@ struct HomeView: View{
                                 .shadow(color: .gray, radius: 2, x: 2, y: 2))
                 }
                 .fullScreenCover(isPresented: $isPresented, content: LonleyBot.init)
-                
+                .navigationTitle("공감봇")
+                .navigationBarTitleDisplayMode(.inline)
                 .padding(30)
                 Spacer()
-                    .navigationBarHidden(true)
                     .ignoresSafeArea(.all, edges: .bottom)
-                
+                    .toolbar{
+                        Button(action: {}){
+                                        Image(systemName: "person.circle")
+                                         .font(.system(size: 30))
+                                         }
+                    }
                 
             }
             

@@ -11,7 +11,7 @@ import SwiftUI
 struct OkeyBotApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            HomeView()
         }
     }
 }

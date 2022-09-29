@@ -17,30 +17,32 @@ struct ButtonView: View {
                 Button(action: {
                     messageViewModel.increaseIndex()
                     sendMessage(message: "[USER]예", index: messageViewModel.index)
+                    messageViewModel.isPossibleShowButton = false
                 }) {
                     HStack {
                         Text("예")
-                            .fontWeight(.semibold)
+                        .foregroundColor(.green)
                             .font(.title)
                     }
                     .padding()
-                    .foregroundColor(.white)
-                    .background(Color.blue)
-                    .cornerRadius(40)
+                    .background(
+                        RoundedRectangle(cornerRadius: 20).stroke(Color.green, lineWidth: 2.5)
+                    )
                 }
                 Button(action: {
                     messageViewModel.increaseIndex()
                     sendMessage(message: "[USER]아니요", index: messageViewModel.index)
+                    messageViewModel.isPossibleShowButton = false
                 }) {
                     HStack {
                         Text("아니요")
-                            .fontWeight(.semibold)
-                            .font(.title)
+                            .foregroundColor(.green)
+                                .font(.title)
                     }
                     .padding()
-                    .foregroundColor(.white)
-                    .background(Color.blue)
-                    .cornerRadius(40)
+                    .background(
+                        RoundedRectangle(cornerRadius: 20).stroke(Color.green, lineWidth: 2.5)
+                    )
                 }
             }
         }
@@ -61,6 +63,11 @@ struct ButtonView: View {
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
             withAnimation {
                 messageViewModel.messages.append(survey.question[index])
+            }
+        }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            withAnimation(Animation.easeIn.delay(0.5)) {
+                messageViewModel.isPossibleShowButton = true
             }
         }
     }

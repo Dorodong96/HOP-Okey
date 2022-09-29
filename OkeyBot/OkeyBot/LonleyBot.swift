@@ -20,18 +20,8 @@ struct LonleyBot: View {
     var body: some View {
         NavigationView {
             VStack {
-                HStack {
-                    Text("옥희")
-                        .font(.largeTitle)
-                        .bold()
-                    Image(systemName: "bubble.left.fill")
-                        .font(.system(size: 32))
-                        .foregroundColor(Color.red)
-                }
-                .padding([.top, .bottom], -30)
-                
 
-                ScrollView {
+                ScrollView(showsIndicators: false) {
                     ForEach(messageViewModel.messages, id: \.self) { message in
                         if message.contains("[USER]") {
                             let newMessage = message.replacingOccurrences(of: "[USER]", with: "")
@@ -43,7 +33,7 @@ struct LonleyBot: View {
                                     .padding(10)
                                     .font(.system(size: 22))
                                     .foregroundColor(.white)
-                                    .background(.blue.opacity(0.8))
+                                    .background(.green.opacity(0.8))
                                     .cornerRadius(10)
                                     .padding(.horizontal, 16)
                                     .padding(.bottom, 10 )
@@ -51,20 +41,11 @@ struct LonleyBot: View {
                             }
                         } else {
                             HStack {
-                                Image("women")
-                                    .resizable()
-                                    .scaledToFill()
-                                    .frame(width: 30, height: 30)
-                                    .clipShape(Circle())
-                                    .overlay {
-                                        Circle().stroke(.red, lineWidth: 3)
-                                    }
-                                    .padding(.leading, 10)
-                                    .padding(.trailing, -10)
                                 Text(message)
                                     .padding(10)
                                     .font(.system(size: 22))
-                                    .background(.gray.opacity(0.4))
+                                    .foregroundColor(.black.opacity(0.8))
+                                    .background(.gray.opacity(0.1))
                                     .cornerRadius(10)
                                     .padding(.horizontal, 16)
                                     .padding(.bottom, 10 )
@@ -76,18 +57,31 @@ struct LonleyBot: View {
                 }
 
                 .rotationEffect(Angle(degrees: 180))
-                .background(Color.gray.opacity(0 ))
+               // .background(Color.white.opacity(0 ))
                 
-                if(messageViewModel.index < 6 && messageViewModel.messages[messageViewModel.messages.count - 1].contains(survey.question[messageViewModel.index]))
+                if(messageViewModel.index < 6 && messageViewModel.messages[messageViewModel.messages.count - 1].contains(survey.question[messageViewModel.index]) && messageViewModel.isPossibleShowButton)
                 {
-                    
                     ButtonView(messageViewModel: messageViewModel).padding()
-                    
+                        .transition(.scale)
                 }
-                if(!messageViewModel.isPossiblebutton){KeyBoardView(messageViewModel: messageViewModel)}
-            }.background(Color.gray.opacity(0.1 ))
-            .navigationTitle("")
-            .navigationBarHidden(true)
+                if(!messageViewModel.isPossiblebutton){
+                    KeyBoardView(messageViewModel: messageViewModel).padding()
+                }
+            }.background(Color.gray.opacity(0.1))
+            .navigationTitle("옥희봇")
+            .navigationBarTitleDisplayMode(.inline)
+            .navigationBarBackButtonHidden(true)
+//            .toolbar{
+//                ToolbarItem(placement: .cancellationAction) {
+//
+//                Button(action: {presentationMode.wrappedValue.dismiss()}){
+//                    Image(systemName: "arrow.left")
+//                        .font(.system(size: 20))
+//                        .foregroundColor(.blue)
+//                }
+//
+//                }
+//            }
         }
     }
     
