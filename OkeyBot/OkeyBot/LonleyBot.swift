@@ -20,6 +20,17 @@ struct LonleyBot: View {
     var body: some View {
         NavigationView {
             VStack {
+                HStack {
+                    Text("옥희")
+                        .font(.largeTitle)
+                        .bold()
+                    Image(systemName: "bubble.left.fill")
+                        .font(.system(size: 32))
+                        .foregroundColor(Color.red)
+                }
+                .padding([.top, .bottom], -30)
+                
+
                 ScrollView {
                     ForEach(messageViewModel.messages, id: \.self) { message in
                         if message.contains("[USER]") {
@@ -59,73 +70,27 @@ struct LonleyBot: View {
                                     .padding(.bottom, 10 )
                                 Spacer()
                             }
-                            if(messageViewModel.index < 6 && message.contains(survey.question[messageViewModel.index]))
-                            {
-                                ButtonView(messageViewModel: messageViewModel)
-                                
-                            }
                         }
                     }
-                    .rotationEffect(.degrees(180))
+                    .rotationEffect(Angle(degrees: 180))
                 }
-                .rotationEffect(.degrees(180))
-                .background(Color.gray.opacity(0.10))
+
+                .rotationEffect(Angle(degrees: 180))
+                .background(Color.gray.opacity(0 ))
                 
-                HStack {
-                    TextField("옥희에게 말을 걸어주세요.", text: $messageText)
-                        .font(.system(size: 22))
-                        .padding(10)
-                        .background(Color.gray.opacity(0.15))
-                        .cornerRadius(10)
-                        .onSubmit {
-                            sendMessage(message: messageText)
-                        }
-                    Button {
-                        sendMessage(message: messageText)
-                       // messageViewModel.messages.append(survey.question[messageViewModel.index])
-                      //  messageViewModel.increaseIndex()
-                    } label: {
-
-                        messageViewModel.isPossiblebutton ? Image(systemName: "paperplane.fill").foregroundColor(Color.gray) : Image(systemName: "paperplane.fill").foregroundColor(Color.red.opacity(0.7))
-
-                    }
-                    .disabled(messageViewModel.isPossiblebutton)
-                    .font(.system(size: 32))
-                    .padding(.horizontal, 10)
+                if(messageViewModel.index < 6 && messageViewModel.messages[messageViewModel.messages.count - 1].contains(survey.question[messageViewModel.index]))
+                {
+                    
+                    ButtonView(messageViewModel: messageViewModel).padding()
                     
                 }
-                .padding(10)
-            }
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
-            
-            .navigationTitle("옥희봇")
-            .navigationBarTitleDisplayMode(.inline)
-            .toolbar {
-                Button {
-                    presentationMode.wrappedValue.dismiss()
-                } label: {
-                    Text("나가기")
-                        .font(.system(size: 20))
-                        .fontWeight(.semibold)
-                        .foregroundColor(.black)
-                }
-                
-                
-            }
+                if(!messageViewModel.isPossiblebutton){KeyBoardView(messageViewModel: messageViewModel)}
+            }.background(Color.gray.opacity(0.1 ))
+            .navigationTitle("")
+            .navigationBarHidden(true)
         }
     }
-    func sendMessage(message: String) {
-        withAnimation {
-            messageViewModel.messages.append("[USER]" + message)
-            self.messageText = ""
-        }
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-            withAnimation {
-                messageViewModel.messages.append(getBotResponse(message: message))
-            }
-        }
-    }
+    
 }
 
 struct LonleyBot_Previews: PreviewProvider {

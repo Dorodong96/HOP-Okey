@@ -22,6 +22,7 @@
 		9A44BF2B28E47AB8003E3F7E /* Survey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A44BF2A28E47AB8003E3F7E /* Survey.swift */; };
 		9A44BF2D28E47CDD003E3F7E /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A44BF2C28E47CDD003E3F7E /* ButtonView.swift */; };
 		9A44BF2F28E481A6003E3F7E /* MessageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A44BF2E28E481A6003E3F7E /* MessageViewModel.swift */; };
+		9A44BF3128E4B1C3003E3F7E /* KeyBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A44BF3028E4B1C3003E3F7E /* KeyBoardView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		9A44BF2A28E47AB8003E3F7E /* Survey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Survey.swift; sourceTree = "<group>"; };
 		9A44BF2C28E47CDD003E3F7E /* ButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
 		9A44BF2E28E481A6003E3F7E /* MessageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewModel.swift; sourceTree = "<group>"; };
+		9A44BF3028E4B1C3003E3F7E /* KeyBoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyBoardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +123,7 @@
 				9A44BF2A28E47AB8003E3F7E /* Survey.swift */,
 				9A44BF2C28E47CDD003E3F7E /* ButtonView.swift */,
 				9A44BF2E28E481A6003E3F7E /* MessageViewModel.swift */,
+				9A44BF3028E4B1C3003E3F7E /* KeyBoardView.swift */,
 			);
 			path = OkeyBot;
 			sourceTree = "<group>";
@@ -287,6 +290,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				055458FF28DA025D00C67F62 /* ContentView.swift in Sources */,
+				9A44BF3128E4B1C3003E3F7E /* KeyBoardView.swift in Sources */,
 				9A44BF2F28E481A6003E3F7E /* MessageViewModel.swift in Sources */,
 				055458FD28DA025D00C67F62 /* OkeyBotApp.swift in Sources */,
 				9A44BF2D28E47CDD003E3F7E /* ButtonView.swift in Sources */,

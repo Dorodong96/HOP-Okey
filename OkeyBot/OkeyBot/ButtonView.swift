@@ -12,11 +12,11 @@ struct ButtonView: View {
     let survey: Survey = Survey()
     var body: some View {
         VStack{
+            if(messageViewModel.test){
             HStack{
                 Button(action: {
                     messageViewModel.increaseIndex()
-                    messageViewModel.messages.append(survey.question[messageViewModel.index])
-                    
+                    sendMessage(message: "[USER]예", index: messageViewModel.index)
                 }) {
                     HStack {
                         Text("예")
@@ -25,14 +25,12 @@ struct ButtonView: View {
                     }
                     .padding()
                     .foregroundColor(.white)
-                    .background(Color.red)
+                    .background(Color.blue)
                     .cornerRadius(40)
                 }
                 Button(action: {
                     messageViewModel.increaseIndex()
-                    if(messageViewModel.index < 5 ){
-                    messageViewModel.messages.append(survey.question[messageViewModel.index])
-                    }
+                    sendMessage(message: "[USER]아니요", index: messageViewModel.index)
                 }) {
                     HStack {
                         Text("아니요")
@@ -41,10 +39,30 @@ struct ButtonView: View {
                     }
                     .padding()
                     .foregroundColor(.white)
-                    .background(Color.red)
+                    .background(Color.blue)
                     .cornerRadius(40)
                 }
             }
         }
+        }.onAppear(){
+            messageViewModel.test = false
+           // withAnimation{
+                messageViewModel.test.toggle()
+            //}
+            
+        }
     }
+    func sendMessage(message: String, index: Int) {
+        withAnimation {
+            messageViewModel.messages.append("[USER]" + message)
+            messageViewModel.messageText = ""
+        }
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            withAnimation {
+                messageViewModel.messages.append(survey.question[index])
+            }
+        }
+    }
+
 }
