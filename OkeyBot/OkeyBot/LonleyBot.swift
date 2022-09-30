@@ -33,7 +33,7 @@ struct LonleyBot: View {
                                     .padding(10)
                                     .font(.system(size: 22))
                                     .foregroundColor(.white)
-                                    .background(Color("MGreen"))
+                                    .background(Color("AGreen"))
                                     .cornerRadius(10)
                                     .padding(.horizontal, 16)
                                     .padding(.bottom, 10 )
@@ -58,10 +58,11 @@ struct LonleyBot: View {
                 
                 .rotationEffect(Angle(degrees: 180))
                 
-                if(messageViewModel.index < 6 && messageViewModel.messages[messageViewModel.messages.count - 1].contains(survey.question[messageViewModel.index]) && messageViewModel.isPossibleShowButton)
+                if(messageViewModel.index < 4 && messageViewModel.messages[messageViewModel.messages.count - 1].contains(survey.question[messageViewModel.index]) && messageViewModel.isPossibleShowButton)
                 {
+                   
                     ButtonView(messageViewModel: messageViewModel).padding()
-                        .transition(.scale)
+//                        .transition(.move(edge: .bottom))
                 }
                 if(!messageViewModel.isPossiblebutton){
                     KeyBoardView(messageViewModel: messageViewModel).padding()

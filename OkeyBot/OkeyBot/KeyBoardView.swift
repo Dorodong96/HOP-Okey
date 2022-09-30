@@ -20,19 +20,15 @@ struct KeyBoardView: View {
                 }
             Button {
                 sendMessage(message:  messageViewModel.messageText)
-               // messageViewModel.messages.append(survey.question[messageViewModel.index])
-              //  messageViewModel.increaseIndex()
             } label: {
-                messageViewModel.isPossiblebutton ? Image(systemName: "paperplane.fill").foregroundColor(Color.gray) : Image(systemName: "paperplane.fill").foregroundColor(Color.red)
+                messageViewModel.isPossiblebutton ? Image(systemName: "paperplane.fill").foregroundColor(Color.gray) : Image(systemName: "paperplane.fill").foregroundColor(Color("AGreen").opacity(0.8))
             }
             .disabled(messageViewModel.isPossiblebutton)
             .font(.system(size: 32))
             .padding(.horizontal, 10)
         }.onAppear(){
             messageViewModel.test = false
-           // withAnimation{
-                messageViewModel.test.toggle()
-            //}
+            messageViewModel.test.toggle()
         }
     }
     
