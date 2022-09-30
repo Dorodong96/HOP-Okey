@@ -22,7 +22,7 @@ class MessageViewModel: ObservableObject{
         checkButtonisPossible()
     }
     func checkButtonisPossible(){
-        if index == 6 {
+        if index == 4 {
             isPossiblebutton = false
         }
     }

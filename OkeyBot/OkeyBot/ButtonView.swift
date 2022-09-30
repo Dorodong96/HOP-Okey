@@ -15,37 +15,41 @@ struct ButtonView: View {
             if(messageViewModel.test){
             HStack{
                 Button(action: {
-                    messageViewModel.increaseIndex()
-                    sendMessage(message: "[USER]예", index: messageViewModel.index)
+                    sendMessage(message: "[USER]" + survey.positveAnswer[messageViewModel.index])
                     messageViewModel.isPossibleShowButton = false
                 }) {
                     HStack {
-                        Text("예")
+                        Text(survey.positveAnswer[messageViewModel.index])
                             .fontWeight(.semibold)
-                            .foregroundColor(Color("LGreen"))
+                            .foregroundColor(Color("LGray"))
                             .font(.title)
                     }
+                    .frame(width: 80, height: 30)
                     .padding()
                     .background(
-                        RoundedRectangle(cornerRadius: 20).stroke(Color("LGreen"), lineWidth: 3.5)
+                        RoundedRectangle(cornerRadius: 20).fill(Color("CGreen"))
                     )
-                }
+                    .background(Color("LGray"))
+                }.padding()
+                
+                
                 Button(action: {
-                    messageViewModel.increaseIndex()
-                    sendMessage(message: "[USER]아니요", index: messageViewModel.index)
+                    sendMessage(message: "[USER]" + survey.negativeAnswer[messageViewModel.index])
                     messageViewModel.isPossibleShowButton = false
                 }) {
                     HStack {
-                        Text("아니요")
+                        Text(survey.negativeAnswer[messageViewModel.index])
                             .fontWeight(.semibold)
-                            .foregroundColor(Color("LGreen"))
+                            .foregroundColor(Color("LGray"))
                                 .font(.title)
                     }
+                    .frame(width: 80, height: 30)
                     .padding()
                     .background(
-                        RoundedRectangle(cornerRadius: 20).stroke(Color("LGreen"), lineWidth: 3.5)
+                        RoundedRectangle(cornerRadius: 20).fill(Color("CGreen"))
                     )
-                }
+                    .background(Color("LGray"))
+                }.padding()
             }
         }
         }.onAppear(){
@@ -56,7 +60,7 @@ struct ButtonView: View {
             
         }
     }
-    func sendMessage(message: String, index: Int) {
+    func sendMessage(message: String) {
         withAnimation {
             messageViewModel.messages.append("[USER]" + message)
             messageViewModel.messageText = ""
@@ -64,13 +68,15 @@ struct ButtonView: View {
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
             withAnimation {
-                messageViewModel.messages.append(survey.question[index])
+                messageViewModel.increaseIndex()
+                messageViewModel.messages.append(survey.question[messageViewModel.index])
             }
         }
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-            withAnimation(Animation.easeIn.delay(0.5)) {
+            withAnimation(Animation.easeInOut.delay(0.5)) {
                 messageViewModel.isPossibleShowButton = true
             }
+            messageViewModel.isPossibleShowButton = true
         }
     }
 
