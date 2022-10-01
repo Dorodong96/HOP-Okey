@@ -17,7 +17,6 @@
 		0554592728DAA4D200C67F62 /* BotResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0554592628DAA4D200C67F62 /* BotResponse.swift */; };
 		0554593628E2B33F00C67F62 /* LonleyBot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0554593528E2B33F00C67F62 /* LonleyBot.swift */; };
 		0554593A28E35C0B00C67F62 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0554593928E35C0B00C67F62 /* ProfileView.swift */; };
-		0554593D28E3646900C67F62 /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = 0554593C28E3646900C67F62 /* SwiftUICharts */; };
 		9A44BF2B28E47AB8003E3F7E /* Survey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A44BF2A28E47AB8003E3F7E /* Survey.swift */; };
 		9A44BF2D28E47CDD003E3F7E /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A44BF2C28E47CDD003E3F7E /* ButtonView.swift */; };
 		9A44BF2F28E481A6003E3F7E /* MessageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A44BF2E28E481A6003E3F7E /* MessageViewModel.swift */; };
@@ -66,7 +65,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0554593D28E3646900C67F62 /* SwiftUICharts in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -167,7 +165,6 @@
 			);
 			name = OkeyBot;
 			packageProductDependencies = (
-				0554593C28E3646900C67F62 /* SwiftUICharts */,
 			);
 			productName = OkeyBot;
 			productReference = 055458F928DA025D00C67F62 /* OkeyBot.app */;
@@ -242,7 +239,6 @@
 			);
 			mainGroup = 055458F028DA025D00C67F62;
 			packageReferences = (
-				0554593B28E3646900C67F62 /* XCRemoteSwiftPackageReference "ChartView" */,
 			);
 			productRefGroup = 055458FA28DA025D00C67F62 /* Products */;
 			projectDirPath = "";
@@ -381,7 +377,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -435,7 +431,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -613,25 +609,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		0554593B28E3646900C67F62 /* XCRemoteSwiftPackageReference "ChartView" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/AppPear/ChartView";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.0.0;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		0554593C28E3646900C67F62 /* SwiftUICharts */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 0554593B28E3646900C67F62 /* XCRemoteSwiftPackageReference "ChartView" */;
-			productName = SwiftUICharts;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 055458F128DA025D00C67F62 /* Project object */;
 }
