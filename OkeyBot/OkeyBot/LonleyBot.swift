@@ -58,7 +58,7 @@ struct LonleyBot: View {
                 
                 .rotationEffect(Angle(degrees: 180))
                 
-                if(messageViewModel.index < 4 && messageViewModel.messages[messageViewModel.messages.count - 1].contains(survey.question[messageViewModel.index]) && messageViewModel.isPossibleShowButton)
+                if(messageViewModel.index < 5 && messageViewModel.messages[messageViewModel.messages.count - 1].contains(survey.question[messageViewModel.index]) && messageViewModel.isPossibleShowButton)
                 {
                    
                     ButtonView(messageViewModel: messageViewModel).padding()
