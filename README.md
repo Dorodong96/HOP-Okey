@@ -18,6 +18,8 @@ OkeyBot은 어르신들의 정신적 건강을 위해 AI에 기반으로 개발�
 ## 2. Client
 
 ![io](https://user-images.githubusercontent.com/70710995/193416544-8863b97e-565a-403c-a343-54ecf3188c6c.png)
+![sp](https://user-images.githubusercontent.com/70710995/193416665-d4281170-8323-4e53-a6ba-543088ec81d3.png)
+
 
 |기능|구현|
 |---|---|
@@ -31,9 +33,9 @@ OkeyBot은 어르신들의 정신적 건강을 위해 AI에 기반으로 개발�
  * 
  
 ## Environment
-> Python Version 3.9.7 (Window)
-> iOS 16+
-> Xcode 14+
+> Python Version 3.9.7 (Window)  
+> iOS 16+   
+> Xcode 14+  
 
 -----------------------
 
