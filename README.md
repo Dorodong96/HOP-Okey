@@ -18,10 +18,11 @@ OkeyBot은 어르신들의 정신적 건강을 위해 AI에 기반으로 개발�
 
 ## 1. ChatBot
  * Transformer
-
+ * [대화 데이터](https://aihub.or.kr/aihubdata/data/view.do?currMenu=115&topMenu=100&aihubDataSe=realm&dataSetSn=86)
 ## 2. Client
 
 ![io](https://user-images.githubusercontent.com/70710995/193416544-8863b97e-565a-403c-a343-54ecf3188c6c.png)
+![as](https://user-images.githubusercontent.com/70710995/193453863-a09361ba-7028-4226-b12b-bdeb42b6d7ce.png)
 ![sp](https://user-images.githubusercontent.com/70710995/193416665-d4281170-8323-4e53-a6ba-543088ec81d3.png)
 
 1. 챗봇을 활용한 어르신 맞춤형 채팅UI
@@ -29,13 +30,13 @@ OkeyBot은 어르신들의 정신적 건강을 위해 AI에 기반으로 개발�
 
 
 ## 3. Server
- * 
+ * Fast API 를 활용한 채팅API 개발
  
 ## Environment
-> Python Version 3.9.7 (Window)  
+> Python Version 3.9.7  
 > iOS 16+   
 > Xcode 14+  
 
 -----------------------
 
-##### 문의 사항 : (이메일)
+##### 문의 사항 : [이메일](https://google.co.kr)
