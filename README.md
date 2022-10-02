@@ -10,6 +10,10 @@
 # Description
 OkeyBot은 어르신들의 정신적 건강을 위해 AI를 기반으로 개발된 채팅봇 서비스입니다.
 
+![13](https://user-images.githubusercontent.com/70710995/193457169-1b48b2a8-3fc8-49bc-8767-e1c93c3d2ad7.png)
+
+
+
 |기능|구현|
 |---|---|
 |챗봇|어르신 맞춤 감정 챗봇|
