@@ -6,11 +6,25 @@
 //
 
 import SwiftUI
-import SwiftUICharts
+import Charts
+
+struct Item: Identifiable {
+    var id = UUID()
+    let type: String
+    let value: Double
+}
 
 struct ProfileView: View {
+    let items: [Item] = [
+        Item(type: "월요일", value: 20),
+        Item(type: "화요일", value: 40),
+        Item(type: "수요일", value: 70),
+        Item(type: "목요일", value: 30),
+        Item(type: "금요일", value: 60),
+        Item(type: "토요일", value: 25),
+        Item(type: "일요일", value: 15)
+    ]
     @Environment(\.presentationMode) var presentationMode
-    let chartStyle = ChartStyle(backgroundColor: Color.black, accentColor: Colors.OrangeStart, secondGradientColor: Colors.OrangeEnd, textColor: Color.white, legendTextColor: Color.white, dropShadowColor: Color.black )
     
     
     var body: some View {
@@ -24,29 +38,36 @@ struct ProfileView: View {
                     .overlay {
                         Circle().stroke(Color("LGreen"), lineWidth: 5)
                     }
+                    .padding(30)
                 
+                Text("김철수님")
+                    .font(.system(.title))
+                    .foregroundColor(Color.black)
+                    .padding(.top, 10)
+                
+                Text("오늘도 행복하세요!")
                 
                 VStack {
-                    Text("김철수님")
-                        .font(.system(.title))
-                        .foregroundColor(Color.black)
-                        .padding(1)
-                    Text("행복한 하루에요!")
-                        .font(.system(size: 20))
+                    HStack {
+                        Text("행복 수치")
+                            .foregroundColor(Color("LGreen"))
+                            .font(.system(size: 20))
+                            .padding(20)
+                        Spacer()
+                    }
                     
-                    //LineView(data: [10, 40, 100, 40, 60, 70, 80], title: "행복 수치")
-                    BarChartView(data: ChartData(points: [8,23,54,32,12,37,7]), title: "행복 수치", form: ChartForm.large)
-                    
-                        .padding()
-                    
-                    BarChartView(data: ChartData(points: [80,60,4,5,50,10,40]), title: "우울 수치", style: chartStyle, form: ChartForm.large)
-                    
-                        .padding()
-                    
-                    
+                    Chart {
+                        ForEach(items) { item in
+                            BarMark(
+                                x: .value("요일", item.type),
+                                y: .value("행복 지수", item.value))
+                            .foregroundStyle(Color("LGreen"))
+                        }
+                    }
+                    .chartXAxis(.visible)
+                    .frame(width: 340, height: 170, alignment: .center)
                     Spacer()
                 }
-                
                 
             }
             .navigationTitle("프로필")
